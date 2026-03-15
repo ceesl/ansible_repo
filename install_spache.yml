@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache2 package
+    dnf:
+      name: httpd
+      state: absent
+
+  - name: add php support
+    dnf:
+      name: php
+      state: absent
